@@ -6,7 +6,7 @@ import emerald from "./assets/emerald.png";
 import ruby from "./assets/ruby.png";
 import sapphire from "./assets/sapphire.png";
 
-enum Stage {
+const enum Stage {
   WELCOME = "WELCOME",
   QUESTIONS = "QUESTIONS",
   ENDING = "ENDING",
@@ -83,7 +83,7 @@ function App() {
   }, [stage]);
 
   useEffect(() => {
-    const handleGlobalKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    const handleGlobalKeyDown = (event: KeyboardEvent) => {
       switch (event.key) {
         case "w":
           answerQuestion(true);

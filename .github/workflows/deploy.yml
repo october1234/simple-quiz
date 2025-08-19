@@ -47,5 +47,5 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          name: production-files
+          name: pages-files
           path: ./dist

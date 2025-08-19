@@ -171,7 +171,7 @@ function Welcome() {
 
 function Ending({gemStatus, answers, restart}: {gemStatus: GemStatus, answers: boolean[], restart: () => void}) {
   // ((ruby&&sapphire)==q1)&&((ruby||emerald)==q2)&&((!sapphire&&emerald)==q3)&&((ruby&&(sapphire||emerald))==q4)
-  const [countdown, setCountdown] = useState(15);
+  const [countdown, setCountdown] = useState(30);
   useEffect(() => {
     const timer = setInterval(() => {
       setCountdown(v => {
@@ -192,7 +192,10 @@ function Ending({gemStatus, answers, restart}: {gemStatus: GemStatus, answers: b
     (answers[3] === (gemStatus.ruby && (gemStatus.sapphire || gemStatus.emerald)))
   return (
     <div>
-      {result && <h1 className="text-5xl">答對了!</h1>}
+      {result && <>
+        <h1 className="text-5xl">答對了!</h1>
+        <p className="text-xl">密鑰是：<span className="text-red-400">{`ZLCSC{H3110...D0_U_Like_7h3_LOGICof_Programm1ng?>:D}`}</span></p>
+      </>}
       {!result && <h1 className="text-5xl">很遺憾，你答錯了 {":("}</h1>}
       <p className="text-xl text-gray-500 mt-4">將在{countdown}秒後返回開始畫面</p>
     </div>
